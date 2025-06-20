@@ -19,8 +19,16 @@ const createUser = async (req, res) => {
     console.log("This is a post mothod for all the users!");
 
     try {
-        const user = new User(req.body);  
-        await user.save();
+
+        // const user = new User(req.body);  
+
+        // await user.save();
+
+        const user = req.body
+
+        console.log(user);
+        
+        console.log(req.file);
 
         return res.status(200).json({ message: "User created successfully",user:user })
     } 
