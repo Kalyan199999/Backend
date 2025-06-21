@@ -7,7 +7,9 @@ const { uploadProfile, uploadGallery } = require('../multerHandling/fileHandling
 
 router.get( '/' , getAllUsers )
 
-router.post('/', uploadProfile.single('profilepic'), createUser);
+// uploadProfile.single('profilepic')
+
+router.post('/', uploadGallery.array('gallery',10), createUser);
 
 router.get('/:id',getUserById);
 router.put('/:id',updateUser);

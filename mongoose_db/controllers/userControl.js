@@ -19,18 +19,18 @@ const createUser = async (req, res) => {
     console.log("This is a post mothod for all the users!");
 
     try {
-
-        // const user = new User(req.body);  
-
-        // await user.save();
-
-        const user = req.body
-
-        console.log(user);
+        // To access the single file use req.file and for multiple files use req.files
         
-        console.log(req.file);
+        const details = req.body
 
-        return res.status(200).json({ message: "User created successfully",user:user })
+        details.files = req.files
+
+        const user = new User( details );  
+
+        await user.save();
+
+        return res.status(200).json({ message: "User created successfully" ,user:user })
+
     } 
     catch (error) 
     {

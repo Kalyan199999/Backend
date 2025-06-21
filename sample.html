@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Create User & Upload Files</title>
+</head>
+<body>
+  <h2>Create New User with Multiple File Upload</h2>
+
+  <form action="http://localhost:5050/api/user/" method="POST" enctype="multipart/form-data">
+    <!-- Name -->
+    <label for="name">Name:</label><br />
+    <input type="text" id="name" name="name" required /><br /><br />
+
+    <!-- Email -->
+    <label for="email">Email:</label><br />
+    <input type="email" id="email" name="email" required /><br /><br />
+
+    <!-- Password -->
+    <label for="password">Password:</label><br />
+    <input type="password" id="password" name="password" required /><br /><br />
+
+    <!-- Date of Birth -->
+    <label for="dob">Date of Birth:</label><br />
+    <input type="date" id="dob" name="dob" /><br /><br />
+
+    <!-- Upload Multiple Files -->
+    <label for="files">Upload Files (images, docs, etc.):</label><br />
+    <input type="file" id="files" name="gallery" multiple /><br /><br />
+
+    <button type="submit">Create User</button>
+  </form>
+</body>
+</html>
