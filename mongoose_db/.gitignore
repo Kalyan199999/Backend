@@ -1,1 +1,4 @@
 /node_modules
+
+# Stripe Secrete Key
+/controllers/myKey.js
